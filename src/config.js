@@ -1,0 +1,32 @@
+import dotenv from "dotenv";
+
+dotenv.config({
+  path: process.env === "dev" ? ".env.testing" : ".env",
+});
+
+const Config = {
+
+  env: process.env.NODE_ENV,
+
+  portServer: process.env.PORT,
+
+  allowedOrigins: process.env.ALLOWED_ORIGINS,
+
+  database: process.env.DB,
+
+  databaseName: process.env.DB_NAME,
+
+  databaseUser: process.env.DB_USER,
+
+  databasePassword: process.env.DB_PASS,
+
+  databaseHost: process.env.DB_HOST,
+
+  databaseUrl: process.env.DB_URL_1 + process.env.DB_USER + ":" + process.env.DB_PASS + process.env.DB_URL_2 + process.env.DB_NAME + process.env.DB_URL_3,
+
+  openWeatherHost: process.env.API_HOST,
+
+  openWeatherAppId: process.env.API_ID
+};
+
+export default Config;

@@ -2,10 +2,13 @@ import express, { Application, Server } from "express";
 import bodyParser from "body-parser";
 import cors from "cors";
 import Routes from "./routes";
+import config from "./config";
+const { portServer,  allowedOrigins, env } = config;
 
 const ApplicationServer = {
+  
   start: () => {
-    const port = process.env.PORT || 3000;
+    const port = portServer || 3000;
     const app = express();
     ApplicationServer.config(app);
     Routes.setupRoutes(app);
@@ -20,7 +23,7 @@ const ApplicationServer = {
   },
 
   config: (app) => {
-    const allowedOrgins = ["http://localhost/"];
+    const allowedOrigins = [String(allowedOrigins)];
 
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({ extended: true }));
@@ -30,7 +33,7 @@ const ApplicationServer = {
         origin: (origin, call) => {
           if (!origin) return call(null, true);
 
-          if (!allowedOrgins.includes(origin)) {
+          if (!allowedOrigins.includes(origin)) {
             const msg = "Is not permission from IP Request: " + origin;
 
             return call(new Error(msg), false);

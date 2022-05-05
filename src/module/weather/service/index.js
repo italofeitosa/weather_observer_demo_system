@@ -1,12 +1,14 @@
 import axios from "axios";
+import config from "../../../config";
 
 const appId = '922efd15ff56ad066584da88f2dacf5b';
 const WheatherService = {
-    
+
     getListCitiesOpenWeather: async (city, limit) =>{
         try {
             console.log('getListCitiesOpenWeather');            
-            const url = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=${limit}&appid=${appId}`;
+            const { openWeatherHost, openWeatherAppId } = config;
+            const url = `${openWeatherHost}geo/1.0/direct?q=${city}&limit=${limit}&appid=${openWeatherAppId}`;
             console.log(url);
             
             const response = await axios.get(url);            
@@ -22,7 +24,8 @@ const WheatherService = {
     getCurrentWeatherDataOpenWeather: async (lat, lon, units) => {
         try {
             console.log('getCurrentWeatherData');
-            const url =  `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=${units}&appid=${appId}`;
+            const { openWeatherHost, openWeatherAppId } = config;
+            const url =  `${openWeatherHost}data/2.5/weather?lat=${lat}&lon=${lon}&units=${units}&appid=${openWeatherAppId}`;
             console.log(url);
 
             const response = await axios.get(url);            

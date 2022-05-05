@@ -1,8 +1,11 @@
 import { createConnection, MongoRepository } from "typeorm";
 import { Weather } from "./module/weather/entity/WeatherEntity";
+import config from "./config";
+const { database, databaseUrl } = config
 
 export default class DBConnector {
   static connector;
+  
 
   static getConnector = async () => {
     if (!DBConnector.connector) {
@@ -15,10 +18,12 @@ export default class DBConnector {
   };
 
   static createConnection = async () => {
+    const mongoURL = String(databaseUrl);
+    const databaseType = String(database);
     return createConnection({
-      type: "mongodb",
+      type: databaseType,
       synchronize: true,
-      url: "mongodb+srv://weatherAdmin:nD8MEIFKEsIixH0s@cluster0.ttspa.mongodb.net/admin?retryWrites=true&w=majority", //mongoURL,
+      url: mongoURL,
       entities: [Weather], //[__dirname + "/**/*.entity{.ts,.js}"],
       useUnifiedTopology: true,
       useNewUrlParser: true,
