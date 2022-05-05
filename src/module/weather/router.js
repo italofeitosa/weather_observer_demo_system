@@ -1,11 +1,16 @@
 import { Application } from "express";
+import res from "express/lib/response";
 import WheatherController from "./controller/index.js";
 
 const WheatherRouter = (app) => {
-  //console.log(WheatherController.getListCities(req, res))
-  app.get("/wheather/cities/:city/:limit", (req, res) => {
+  
+  app.get("/weather/cities/:city/:limit", (req, res) => {
     WheatherController.getListCities(req, res);
   });
+
+  app.get("/weather/current/data/:lat/:lon/:unit", (req, res) =>{
+    
+  })
 
 };
 
