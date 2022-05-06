@@ -1,7 +1,6 @@
 import axios from "axios";
 import config from "../../../config";
 
-const appId = '922efd15ff56ad066584da88f2dacf5b';
 const WheatherService = {
 
     getListCitiesOpenWeather: async (city, limit) =>{
@@ -11,7 +10,7 @@ const WheatherService = {
             const url = `${openWeatherHost}geo/1.0/direct?q=${city}&limit=${limit}&appid=${openWeatherAppId}`;
             console.log(url);
             
-            const response = await axios.get(url);            
+            const response = await axios.get(url);
 
             return response;
 

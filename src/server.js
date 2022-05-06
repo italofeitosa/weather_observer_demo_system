@@ -23,7 +23,7 @@ const ApplicationServer = {
   },
 
   config: (app) => {
-    const allowedOrigins = [String(allowedOrigins)];
+    const allowedOriginsServer = [String(allowedOrigins)];
 
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({ extended: true }));
@@ -33,7 +33,7 @@ const ApplicationServer = {
         origin: (origin, call) => {
           if (!origin) return call(null, true);
 
-          if (!allowedOrigins.includes(origin)) {
+          if (!allowedOriginsServer.includes(origin)) {
             const msg = "Is not permission from IP Request: " + origin;
 
             return call(new Error(msg), false);

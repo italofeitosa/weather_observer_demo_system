@@ -6,18 +6,22 @@ import config from "./config";
 
 DBConnector.createConnection().then(async () => {
     console.log("DB started...");
-    const weatherRepository = await DBConnector.getWeatherRepository();
+    //const weatherRepository = await DBConnector.getWeatherRepository();
    
-    /* await weatherRepository.save({city: "Barro", latitude: "-3.7304512", longitude: "-38.5217989"}).then(weather => {
+    /* await weatherRepository.save({city: "Fortaleza", latitude: "-3.7304512", longitude: "-38.5217989"}).then(weather => {
         console.log("Weather has been saved: ", weather)
     }).catch((error) => Promise.reject(error)); */
 
-    await weatherRepository.find().then(weather => {
+   /*  await weatherRepository.find().then(weather => {
         console.log("Weather has been find: ", weather)
-    }).catch((error) => Promise.reject(error));    
+    }).catch((error) => Promise.reject(error)); */    
 
-    const {databaseUrl} = config;
-    console.log(databaseUrl);
+    //const teste = await weatherRepository.find({where:{}});
+    //const teste = await weatherRepository.find();
+    //console.log(teste);
+
+    /* const {databaseUrl} = config;
+    console.log(databaseUrl); */
 
     Server.start();
 });

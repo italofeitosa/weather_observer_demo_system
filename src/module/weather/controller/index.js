@@ -1,5 +1,3 @@
-import { Response, Request } from "express";
-import req from "express/lib/request";
 import WheatherService from "../service";
 //import WheatherValidator from "../validator";
 

@@ -26,7 +26,12 @@ const Config = {
 
   openWeatherHost: process.env.API_HOST,
 
-  openWeatherAppId: process.env.API_ID
+  openWeatherAppId: process.env.API_ID,
+
+  HTTP_STATUS_OK: process.env.HTTP_STATUS_OK,
+
+  secret: process.env.SECRET,
+
 };
 
 export default Config;

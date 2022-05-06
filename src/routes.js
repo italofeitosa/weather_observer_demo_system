@@ -1,8 +1,9 @@
-import { Application, Request, Response } from "express";
 import wheatherRouter from "./module/weather/router";
+import authRouter from "./module/authentication/router";
 
 const Routes = {
   setupRoutes: (app) => {
+    authRouter(app);
     wheatherRouter(app);
 
     app.get("/health", (req, resp) => resp.sendStatus(200));
