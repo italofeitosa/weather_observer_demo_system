@@ -1,5 +1,5 @@
 import AuthenticationController from "./controller";
-import basicAuth from 'express-basic-auth';
+//import basicAuth from 'express-basic-auth';
 
 const AuthRouter = (app) => {
   //app.use(basicAuth({ users: { admin: "admin" } }));
