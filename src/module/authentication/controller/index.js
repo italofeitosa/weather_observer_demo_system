@@ -5,12 +5,12 @@ const { HTTP_STATUS_OK } = config;
 export default class AuthenticationController {
     static login = async (req, res) =>{
         try {
-            const user ={
-                email:'italoa.feitosa@gmail.com',
-                id: '62745e26d76cf8155060ecb5'
-            }
+            console.log("login...");
+            const { email, password } = req.body;
+            const user = await AutheticationService.signUserVerify(email, password);            
 
-            console.log(req.body);
+            if(user.error)  throw user;
+
             AutheticationService.signUser(user, res);
 
             return res.status(parseInt(HTTP_STATUS_OK)).send("Token Genarate");

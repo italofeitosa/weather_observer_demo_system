@@ -1,8 +1,10 @@
+import userRouter from "./module/user/router";
 import wheatherRouter from "./module/weather/router";
 import authRouter from "./module/authentication/router";
 
 const Routes = {
   setupRoutes: (app) => {
+    userRouter(app);
     authRouter(app);
     wheatherRouter(app);
 
