@@ -15,8 +15,11 @@ export class User {
   @PrimaryColumn({ type: "varchar", unique: true })
   email = "";
 
-  @Column({ type: "varchar" })
+  @Column({ type: "varchar", nullable: true })
   name = "";
+
+  @Column({ type: "varchar" })
+  lastName = "";
 
   @Column({ type: "varchar", nullable: true })
   password = "";

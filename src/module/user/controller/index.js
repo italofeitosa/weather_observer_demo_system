@@ -1,24 +1,18 @@
-import { User } from "../entity/UserEntity";
 import UserService from "../service";
 import AutheticationService from "../../authentication/service";
+import UserValidator from "../validator";
 import config from "../../../config";
 const { HTTP_STATUS_OK } = config;
 
 export default class UserController {
   static singUp = async (req, res) => {
     try {
-        const {email, name, password} = req.body;
+        const {email, name, lastName, password} = req.body;
+        
+        const validation = UserValidator.validationSingUpParams({email, name, lastName, password});
+        if(validation)  throw validation;
 
-        console.log("email: " + email);
-        console.log("name: " + name);
-        console.log("password: " + password);
-
-        const user = new User;
-        user.email = email;
-        user.name = name;
-        user.password = password;
-
-        const userCreate = await UserService.createUser(user);
+        const userCreate = await UserService.createUser({email, name, lastName, password});
         if(userCreate.errmsg) throw userCreate;
 
         delete userCreate.password;
