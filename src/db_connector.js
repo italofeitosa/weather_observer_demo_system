@@ -36,7 +36,7 @@ export default class DBConnector {
       .catch((error) => Promise.reject(error));
   };
 
-  static getWeatherRepository = async () => {
+  static getWeatherObserverRepository = async () => {
     return DBConnector.getConnector()
       .then((connector) => {
         return connector.getMongoRepository(WeatherObserver);       

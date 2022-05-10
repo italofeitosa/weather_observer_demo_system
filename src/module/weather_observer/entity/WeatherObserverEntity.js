@@ -1,4 +1,4 @@
-import { Column, Entity,  ObjectIdColumn, PrimaryGeneratedColumn, CreateDateColumn } from "typeorm";
+import { Column, Entity,  ObjectIdColumn, CreateDateColumn, UpdateDateColumn } from "typeorm";
 
 
 @Entity("WeatherObserver")
@@ -11,18 +11,32 @@ export class WeatherObserver {
   //@PrimaryGeneratedColumn()
   id = undefined;
 
-  @Column("varchar")
-  city = "";
+  @Column({ type: "varchar", nullable: true })
+  current_temp = "";
 
-  @Column("varchar")
-  latitude = "";
+  @Column({ type: "varchar" })
+  previous_temp = "";
 
-  @Column("varchar")
-  longitude = "";
+  @Column({ type: "varchar" })
+  temp_max = "";
+
+  @Column({ type: "varchar" })
+  temp_min = "";
+
+  @Column({ type: "varchar", nullable: true })
+  temp_max_variaton = "";
+
+  @Column({ type: "varchar", nullable: true })
+  temp_min_variaton = "";
+
+  @Column({ type: "varchar", nullable: true })
+  id_city = "";
 
   @CreateDateColumn("timestamp")
-  //@CreateDateColumn({ type: "timestamp" })
   createdAt = "";
+  
+  @UpdateDateColumn("timestamp")
+  updatedAt = "";
 
 }
 
