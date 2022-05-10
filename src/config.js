@@ -32,6 +32,8 @@ const Config = {
 
   secret: process.env.SECRET,
 
+  timeExpires: process.env.TIME_EXPIRES,
+
 };
 
 export default Config;
