@@ -12,7 +12,7 @@ const AutheticationService = {
       const newToken = jwt.sign(payload, secret, {
         expiresIn: parseInt(timeExpires), // expires in 1 hour
       });
-     
+
       res.setHeader("token", newToken);
       res.setHeader("Access-Control-Allow-Headers", "true");
       res.setHeader("Access-Control-Expose-Headers", "token");
@@ -32,10 +32,14 @@ const AutheticationService = {
         })
         .catch((error) => Promise.reject(error));
 
-      if (user == undefined) throw AutheticationService.errorLogin();
-      if (user.password != password) throw AutheticationService.errorLogin();
+      if (!user) throw AutheticationService.errorLogin();
 
-      return user;
+      return user
+        .verifyIsSamePassword(password)
+        .then(() => user)
+        .catch((error) => {
+          return Promise.reject(AutheticationService.errorLogin());
+        });
 
     } catch (error) {
       console.log(error);
@@ -47,14 +51,13 @@ const AutheticationService = {
     console.log("unauthorize...");
     try {
       return res.status(422).json(error);
-
     } catch (error) {
       console.log(error);
       return error;
     }
   },
 
-  errorLogin: () =>{
+  errorLogin: () => {
     return { error: "These credentials do not match our records." };
   },
 };

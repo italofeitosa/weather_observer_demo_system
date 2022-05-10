@@ -1,4 +1,4 @@
-import { Column, Entity, CreateDateColumn, PrimaryColumn, BeforeInsert, BeforeUpdate, ObjectIdColumn, Unique } from "typeorm";
+import { Column, Entity, CreateDateColumn, PrimaryColumn, BeforeInsert, BeforeUpdate, ObjectIdColumn, Unique, Index, ObjectID } from "typeorm";
 import crypto from "crypto";
 import Security from "../../security";
 
@@ -10,7 +10,7 @@ export class User {
   }
 
   @ObjectIdColumn()
-  id = undefined;
+  id = ObjectID;
 
   @PrimaryColumn({ type: "varchar", unique: true })
   email = "";
@@ -30,9 +30,12 @@ export class User {
   @CreateDateColumn({ type: "timestamp" })
   createdAt = Date;
 
-  static hashPassword = (newPassword) => {
+  static hashPassword = async (newPassword) => {
     const hashSalt = crypto.randomBytes(16).toString("hex");
-    const password = Security.encrypt(newPassword, hashSalt).catch((error) =>
+    const password = await Security.encrypt(newPassword, hashSalt).then((pwd) =>{
+      return pwd;      
+    })
+    .catch((error) =>
       Promise.reject(error)
     );
 
@@ -40,15 +43,15 @@ export class User {
   };
 
   @BeforeInsert()
-  hashPassword() {
+  async hashPassword() {
     console.log("hashPassword execute...");
-    const { password, hashSalt } = User.hashPassword(this.password);
+    const { password, hashSalt } = await User.hashPassword(this.password);    
     this.password = password;
     this.passwordHashSalt = hashSalt;
   }
 
   @BeforeUpdate()
-  hashNewPassword() {
+  async hashNewPassword() {
     if (!this.newPassword) return;
 
     const { password, hashSalt } = User.hashPassword(this.newPassword);
@@ -57,7 +60,10 @@ export class User {
   }
 
   async verifyIsSamePassword(password) {
-    const hash = Security.encrypt(password, this.passwordHashSalt).catch(
+    const hash = await Security.encrypt(password, this.passwordHashSalt).then((hashPassword) => {
+      return hashPassword;
+    })
+    .catch(
       (error) => Promise.reject(error)
     );
 

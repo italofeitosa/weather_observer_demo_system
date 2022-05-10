@@ -1,17 +1,19 @@
 import DBConnector from "../../../db_connector";
+import { User } from "../entity/UserEntity";
 
 const UserService = {
   createUser: async (user) => {
     try {
       console.log('createUser...');
       const userRepository = await DBConnector.getUserRepository();
+      const userEntity =  Object.assign(new User(), {
+        email: user.email,
+        name: user.name,
+        lastName: user.lastName,
+        password: user.password,
+      });
       const userCreate = await userRepository
-        .save({
-          email: user.email,
-          name: user.name,
-          lastName: user.lastName,
-          password: user.password,
-        })
+        .save(userEntity)
         .then((user) => {
           console.log("User has been Created: ", user);
           return user;

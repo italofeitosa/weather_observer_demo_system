@@ -16,6 +16,7 @@ export default class UserController {
         if(userCreate.errmsg) throw userCreate;
 
         delete userCreate.password;
+        delete userCreate.passwordHashSalt;
         AutheticationService.signUser(userCreate, res);
 
         return res.status(parseInt(HTTP_STATUS_OK)).json(userCreate);
