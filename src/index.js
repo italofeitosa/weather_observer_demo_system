@@ -1,5 +1,6 @@
 import Server from './server';
 import DBConnector from './db_connector';
+import { CronJob } from 'cron';
 import { WeatherObserver } from './module/weather_observer/entity/WeatherObserverEntity'; 
 //import { User } from './module/user/entity/UserEntity';
 import config from "./config";
@@ -30,8 +31,19 @@ DBConnector.createConnection().then(async () => {
         //const teste = await weatherObserverRepository.find({where:{}});
         //const teste = await weatherObserverRepository.find();
         //console.log(teste);
+        
+        //TODO CronJob
+        new CronJob(
+            //`00 ${this.hour} * * *`,
+            `0-59/5 * * * *`, //Reunning every 5 minutes
+            () =>{console.log("Job is Running...")},
+            null,
+            true,
+            'America/Fortaleza',
+          );
 
         Server.start();
+
     } catch (error) {
         console.log(error);
     }
