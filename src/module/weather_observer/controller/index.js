@@ -1,5 +1,5 @@
 import WheatherObserverService from "../service";
-//import WheatherValidator from "../validator";
+import WheatherObserverValidator from "../validator";
 
 export default class WheatherObserverController {
   static getListCities = async (req, res) => {
@@ -7,31 +7,17 @@ export default class WheatherObserverController {
       const { city, limit } = req.params;
       console.info("City:" + city);
       console.info("limit:" + limit);
-      /* WheatherValidator.validationListCitiesParams({
-          city,
-          limit,
-        }); */
 
-      const response = await WheatherObserverService.getListCitiesOpenWeather(
-        city,
-        limit
-      );
+      const validation = WheatherObserverValidator.validationListCitiesParams({ city, limit });
+      if(validation)  throw validation;
+
+      const response = await WheatherObserverService.getListCitiesOpenWeather(city, limit);
 
       if (response.cod == "400") throw response;
 
       return res.status(200).json(response.data);
 
-      //TODO já funciona
-      /* return WheatherObserverService.getListCitiesOpenWeather(city, limit)
-        .then((wheather) => {
-          console.log(JSON.stringify(wheather.data));
-          return res.status(200).json(wheather.data);
-        })
-        .catch((error) => {
-          res.status(400).send("ERROR: " + error);
-        }); */
     } catch (error) {
-      //handleApiError(error, res);
       console.log(error);
       return res.status(parseInt(error.cod)).json(error);
     }
@@ -51,7 +37,6 @@ export default class WheatherObserverController {
       return res.status(200).json(response.data);
 
     } catch (error) {
-      //handleApiError(error, res);
       console.log(error);
       return res.status(parseInt(error.cod)).json(error);
     }
