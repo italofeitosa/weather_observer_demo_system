@@ -1,7 +1,7 @@
 import axios from "axios";
 import config from "../../../config";
 
-const WheatherService = {
+const WheatherObserverService = {
 
     getListCitiesOpenWeather: async (city, limit) =>{
         try {
@@ -39,4 +39,4 @@ const WheatherService = {
 }
 
 
-export default WheatherService;
+export default WheatherObserverService;

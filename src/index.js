@@ -1,6 +1,6 @@
 import Server from './server';
 import DBConnector from './db_connector';
-import { Weather } from './module/weather/entity/WeatherEntity';
+import { WeatherObserver } from './module/weather_observer/entity/WeatherObserverEntity'; 
 //import { User } from './module/user/entity/UserEntity';
 import config from "./config";
 import { User } from './module/user/entity/UserEntity';

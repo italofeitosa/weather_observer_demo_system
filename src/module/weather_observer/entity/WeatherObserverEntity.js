@@ -1,8 +1,8 @@
 import { Column, Entity,  ObjectIdColumn, PrimaryGeneratedColumn, CreateDateColumn } from "typeorm";
 
 
-@Entity("Weather")
-export class Weather {
+@Entity("WeatherObserver")
+export class WeatherObserver {
   constructor(weather) {
     Object.assign(this, weather);
   }

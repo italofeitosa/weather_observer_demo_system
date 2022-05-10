@@ -2,7 +2,7 @@ import WheatherController from "./controller/index.js";
 import Security from "../security/index.js";
 
 
-const WheatherRouter = (app) => {
+const WheatherObserverRouter = (app) => {
   
   app.get("/weather/cities/:city/:limit", Security.verifyJWT, WheatherController.getListCities);
 
@@ -11,4 +11,4 @@ const WheatherRouter = (app) => {
   });
 };
 
-export default WheatherRouter;
+export default WheatherObserverRouter;

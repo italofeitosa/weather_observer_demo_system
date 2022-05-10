@@ -1,7 +1,7 @@
-import WheatherService from "../service";
+import WheatherObserverService from "../service";
 //import WheatherValidator from "../validator";
 
-export default class WheatherController {
+export default class WheatherObserverController {
   static getListCities = async (req, res) => {
     try {
       const { city, limit } = req.params;
@@ -12,7 +12,7 @@ export default class WheatherController {
           limit,
         }); */
 
-      const response = await WheatherService.getListCitiesOpenWeather(
+      const response = await WheatherObserverService.getListCitiesOpenWeather(
         city,
         limit
       );
@@ -22,7 +22,7 @@ export default class WheatherController {
       return res.status(200).json(response.data);
 
       //TODO já funciona
-      /* return WheatherService.getListCitiesOpenWeather(city, limit)
+      /* return WheatherObserverService.getListCitiesOpenWeather(city, limit)
         .then((wheather) => {
           console.log(JSON.stringify(wheather.data));
           return res.status(200).json(wheather.data);
@@ -44,7 +44,7 @@ export default class WheatherController {
       console.log("Longitude: " + lon);
       console.log("Unit: " + unit);
 
-      const response = await WheatherService.getCurrentWeatherDataOpenWeather(lat, lon, unit);
+      const response = await WheatherObserverService.getCurrentWeatherDataOpenWeather(lat, lon, unit);
 
       if(response.cod == '400') throw response;
 
