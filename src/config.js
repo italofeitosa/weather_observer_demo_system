@@ -31,8 +31,14 @@ const Config = {
   HTTP_STATUS_OK: process.env.HTTP_STATUS_OK,
 
   secret: process.env.SECRET,
-
+  
   timeExpires: process.env.TIME_EXPIRES,
+
+  celsiusTemp: process.env.CELSIUS_TEMP_UNIT,
+
+  fahrenheitTemp: process.env.FAHRENHEIT_TEMP_UNIT,
+
+  kelvinTemp: process.env.KELVIN_TEMP_UNIT,
 
 };
 

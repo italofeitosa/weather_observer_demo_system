@@ -5,7 +5,7 @@ const WheatherObserverService = {
 
     getListCitiesOpenWeather: async (city, limit) =>{
         try {
-            console.log('getListCitiesOpenWeather');            
+            console.log('getListCitiesOpenWeather...');            
             const { openWeatherHost, openWeatherAppId } = config;
             const url = `${openWeatherHost}geo/1.0/direct?q=${city}&limit=${limit}&appid=${openWeatherAppId}`;
             console.log(url);
@@ -20,9 +20,9 @@ const WheatherObserverService = {
         }
     },
 
-    getCurrentWeatherDataOpenWeather: async (lat, lon, units) => {
+    getCurrentTempWeatherCityOpenWeather: async (lat, lon, units) => {
         try {
-            console.log('getCurrentWeatherData');
+            console.log('getCurrentTempWeatherCityOpenWeather...');
             const { openWeatherHost, openWeatherAppId } = config;
             const url =  `${openWeatherHost}data/2.5/weather?lat=${lat}&lon=${lon}&units=${units}&appid=${openWeatherAppId}`;
             console.log(url);
