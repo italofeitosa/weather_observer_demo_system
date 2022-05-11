@@ -18,7 +18,6 @@ export default class Security {
     try {
       const token = req.headers['x-access-token'];
       console.log(token);
-      console.log(secret);   
       if(!token) {
         return res.status(401).json({ auth: false, message: 'No token provided.' });
       }

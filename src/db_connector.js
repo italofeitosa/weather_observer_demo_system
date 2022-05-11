@@ -1,7 +1,9 @@
 import { createConnection, MongoRepository } from "typeorm";
 import { WeatherObserver } from "./module/weather_observer/entity/WeatherObserverEntity";
-import config from "./config";
 import { User } from "./module/user/entity/UserEntity";
+import { City } from "./module/city/entity/CityEntity";
+import { Report } from "./module/report/entity/ReportEntity";
+import config from "./config";
 const { database, databaseUrl } = config
 
 export default class DBConnector {
@@ -25,7 +27,7 @@ export default class DBConnector {
       type: databaseType,
       synchronize: true,
       url: mongoURL,
-      entities: [WeatherObserver, User], //[__dirname + "/**/*.entity{.ts,.js}"],
+      entities: [WeatherObserver, User, City, Report], //[__dirname + "/**/*.entity{.ts,.js}"],
       useUnifiedTopology: true,
       useNewUrlParser: true,
     })
@@ -48,6 +50,22 @@ export default class DBConnector {
     return DBConnector.getConnector()
       .then((connector) => {
         return connector.getMongoRepository(User);       
+      })
+      .catch((error) => Promise.reject(error));
+  };
+
+  static getCityRepository = async () => {
+    return DBConnector.getConnector()
+      .then((connector) => {
+        return connector.getMongoRepository(City);       
+      })
+      .catch((error) => Promise.reject(error));
+  };
+
+  static getReportRepository = async () => {
+    return DBConnector.getConnector()
+      .then((connector) => {
+        return connector.getMongoRepository(Report);       
       })
       .catch((error) => Promise.reject(error));
   };
