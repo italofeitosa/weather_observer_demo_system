@@ -14,8 +14,11 @@ export default class WheatherObserverController {
       if(validation)  throw validation;
 
       const response = await WheatherObserverService.getListCitiesOpenWeather(city, limit);
-
       if (response.cod == "400") throw response;
+
+      response.data.forEach(item => {
+        delete item.local_names
+      });
       
       return res.status(parseInt(HTTP_STATUS_OK)).json(response.data);
 
