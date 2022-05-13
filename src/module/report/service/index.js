@@ -28,6 +28,33 @@ const ReportService = {
       return error.writeErrors[0];
     }
   },
+
+  findReport: async (report) => {
+    try {
+      const reportRepository = await DBConnector.getReportRepository();
+      const reportListCities = await reportRepository.find({
+        email: report.email,
+        name: report.name
+      }).then((listCity) => {
+        return listCity;        
+
+      }).catch((error) => Promise.reject(error));
+
+      reportListCities.forEach(item => {
+          delete item.id;
+          delete item.id_city;
+          delete item.email;
+          delete item.createdAt;          
+      });
+
+      return reportListCities;
+      
+    } catch (error) {
+      console.log(error);
+      return error.writeErrors[0];
+    }
+  }
+
 };
 
 export default ReportService;

@@ -6,7 +6,6 @@ import CronJobConsultTemp from "./module/cron_job";
 DBConnector.createConnection().then(async () => {
   try {
     console.log("DB started...");
-    //TODO CronJob
     new CronJob(
       //`00 ${this.hour} * * *`,
       `0-59/5 * * * *`, //Reunning every 5 minutes
@@ -15,8 +14,7 @@ DBConnector.createConnection().then(async () => {
       true,
       "America/Fortaleza"
     );
-
-    //console.log("Job is Running...")
+    console.log("Job is Running...")
 
     Server.start();
 
