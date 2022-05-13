@@ -1,0 +1,31 @@
+[
+  {
+    "name": "Salvador",
+    "lat": -12.9822499,
+    "lon": -38.4812772,
+    "country": "BR",
+    "state": "Bahia"
+  },
+  {
+    "name": "El Salvador",
+    "lat": -26.2462114,
+    "lon": -69.6259658,
+    "country": "CL",
+    "state": "Atacama Region"
+  },
+  {
+    "name": "Salvador",
+    "lat": 40.4441255,
+    "lon": -3.6279872800816184,
+    "country": "ES",
+    "state": "Community of Madrid"
+  },
+  {
+    "name": "El Salvador",
+    "lat": 8.5606937,
+    "lon": 124.5227662,
+    "country": "PH",
+    "state": "Misamis Oriental"
+  },
+  { "name": "Salvador", "lat": 40.0887823, "lon": -7.0908071, "country": "PT" }
+]

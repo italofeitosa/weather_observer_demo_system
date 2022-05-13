@@ -1,0 +1,524 @@
+{
+  "version": 6,
+  "entities": [
+    {
+      "entity": {
+        "type": "Project",
+        "id": "2d726028-3350-4264-81aa-2ecab8a14b6c",
+        "name": "WODS"
+      },
+      "children": [
+        {
+          "entity": {
+            "type": "Service",
+            "id": "445a1b7f-068b-4321-a8b0-ae63d6f1c7b1",
+            "name": "Authentication/User"
+          },
+          "children": [
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "requestBody": true,
+                  "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+                  "name": "POST"
+                },
+                "body": {
+                  "formBody": {
+                    "overrideContentType": true,
+                    "encoding": "application/x-www-form-urlencoded",
+                    "items": []
+                  },
+                  "bodyType": "Text"
+                },
+                "uri": {
+                  "query": {
+                    "delimiter": "&",
+                    "items": []
+                  },
+                  "scheme": {
+                    "name": "http",
+                    "version": "V11"
+                  },
+                  "host": "localhost:3000",
+                  "path": "/auth/logout"
+                },
+                "id": "3d2e34e8-4193-4c54-a643-403f2e1a329e",
+                "name": "Logout",
+                "headers": [
+                  {
+                    "enabled": true,
+                    "name": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "enabled": true,
+                    "name": "x-access-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Iml0YWxvYS5mZWl0b3NhQGdtYWlsLmNvbSIsInN1YiI6IjYyNzlhNjU3NjY1NGJjMTg1YzAxZTNiZiIsImlhdCI6MTY1MjE0NzM0NSwiZXhwIjoxNjUyMTUwOTQ1fQ.-bcZseBZp5SQmmDjV-zac5plcZdTeTGfClwqhjf3cKo"
+                  }
+                ]
+              }
+            },
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "requestBody": true,
+                  "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+                  "name": "POST"
+                },
+                "body": {
+                  "formBody": {
+                    "overrideContentType": true,
+                    "encoding": "application/x-www-form-urlencoded",
+                    "items": []
+                  },
+                  "bodyType": "Text",
+                  "textBody": "{\n\n    \"email\": \"italoa.feitosa@gmail.com\",\n    \"name\": \"Italo\",\n    \"lastName\": \"Feitosa\",\n    \"password\": \"teste@123456\"\n  \n}\n"
+                },
+                "uri": {
+                  "query": {
+                    "delimiter": "&",
+                    "items": []
+                  },
+                  "scheme": {
+                    "name": "http",
+                    "version": "V11"
+                  },
+                  "host": "localhost:3000",
+                  "path": "/user/singup"
+                },
+                "id": "d0eab4b7-5c89-4026-bd58-5c0c37889419",
+                "name": "User Sing Up",
+                "headers": [
+                  {
+                    "enabled": true,
+                    "name": "Content-Type",
+                    "value": "application/json"
+                  }
+                ]
+              }
+            },
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "requestBody": true,
+                  "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+                  "name": "POST"
+                },
+                "body": {
+                  "formBody": {
+                    "overrideContentType": true,
+                    "encoding": "application/x-www-form-urlencoded",
+                    "items": []
+                  },
+                  "bodyType": "Text",
+                  "textBody": "{\n\n \"email\": \"italoa.feitosa@gmail.com\",\n \"password\": \"teste@123456\"\n  \n}\n"
+                },
+                "uri": {
+                  "query": {
+                    "delimiter": "&",
+                    "items": []
+                  },
+                  "scheme": {
+                    "name": "http",
+                    "version": "V11"
+                  },
+                  "host": "localhost:3000",
+                  "path": "/auth/login"
+                },
+                "id": "7b2ba281-1943-46a3-abda-8e27a0be22ff",
+                "name": "authentication",
+                "headers": [
+                  {
+                    "enabled": true,
+                    "name": "Content-Type",
+                    "value": "application/json"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "entity": {
+            "type": "Service",
+            "id": "41c42d7e-4c7a-4b36-9e8b-8e4a92faff85",
+            "name": "City Observer"
+          },
+          "children": [
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "requestBody": true,
+                  "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+                  "name": "POST"
+                },
+                "body": {
+                  "formBody": {
+                    "overrideContentType": true,
+                    "encoding": "application/x-www-form-urlencoded",
+                    "items": []
+                  },
+                  "bodyType": "Text",
+                  "textBody": "{\n  \"name\": \"Salvador\",\n  \"latitude\": \"-12.9822499\",\n  \"longitude\": \"-38.4812772\",\n  \"country\": \"BR\",\n  \"state\": \"Bahia\",\n  \"email\": \"italoa.feitosa@gmail.com\",\n  \"variation_temp\": \"1.0\"\n}\n"
+                },
+                "uri": {
+                  "query": {
+                    "delimiter": "&",
+                    "items": []
+                  },
+                  "scheme": {
+                    "name": "http",
+                    "version": "V11"
+                  },
+                  "host": "localhost:3000",
+                  "path": "/city/observercity"
+                },
+                "id": "04ddc742-2b82-4444-9094-244b7d9e87e2",
+                "name": "createObserverCity",
+                "headers": [
+                  {
+                    "enabled": true,
+                    "name": "x-access-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Iml0YWxvYS5mZWl0b3NhQGdtYWlsLmNvbSIsInN1YiI6IjYyN2FmMTJhMDk3ZGU3MTBmODMxODkxYSIsImlhdCI6MTY1MjQxMDgyMiwiZXhwIjoxNjUyNDE0NDIyfQ.XqQkOCZYZb-e5WqIBLOMMVVE8ijWtiHHmVUjSJi95Ks"
+                  },
+                  {
+                    "enabled": true,
+                    "name": "Content-Type",
+                    "value": "application/json"
+                  }
+                ]
+              }
+            },
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "link": "http://tools.ietf.org/html/rfc7231#section-4.3.5",
+                  "name": "DELETE"
+                },
+                "body": {
+                  "formBody": {
+                    "overrideContentType": true,
+                    "encoding": "application/x-www-form-urlencoded",
+                    "items": []
+                  },
+                  "bodyType": "Text"
+                },
+                "uri": {
+                  "query": {
+                    "delimiter": "&",
+                    "items": []
+                  },
+                  "scheme": {
+                    "name": "http",
+                    "version": "V11"
+                  },
+                  "host": "localhost:3000",
+                  "path": "/city/627dc63ec850e646e456e4ce"
+                },
+                "id": "6fc50256-cf2d-40aa-907d-8a3b7c98ce5a",
+                "name": "deleteCity",
+                "headers": [
+                  {
+                    "enabled": true,
+                    "name": "x-access-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Iml0YWxvYS5mZWl0b3NhQGdtYWlsLmNvbSIsInN1YiI6IjYyN2FmMTJhMDk3ZGU3MTBmODMxODkxYSIsImlhdCI6MTY1MjQwNzAzNywiZXhwIjoxNjUyNDEwNjM3fQ.pOpuPyb_qblyBLnOTmjuaz6CB3pYYrRhGIaYRModA6A"
+                  }
+                ]
+              }
+            },
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+                  "name": "GET"
+                },
+                "body": {
+                  "formBody": {
+                    "overrideContentType": true,
+                    "encoding": "application/x-www-form-urlencoded",
+                    "items": []
+                  },
+                  "bodyType": "Text"
+                },
+                "uri": {
+                  "query": {
+                    "delimiter": "&",
+                    "items": []
+                  },
+                  "scheme": {
+                    "name": "http",
+                    "version": "V11"
+                  },
+                  "host": "localhost:3000",
+                  "path": "/city/list/observercity/italoa.feitosa@gmail.com"
+                },
+                "id": "0a2a480d-6657-484e-b26c-ee702ab591ce",
+                "name": "findCityByEmail",
+                "headers": [
+                  {
+                    "enabled": true,
+                    "name": "x-access-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Iml0YWxvYS5mZWl0b3NhQGdtYWlsLmNvbSIsInN1YiI6IjYyN2FmMTJhMDk3ZGU3MTBmODMxODkxYSIsImlhdCI6MTY1MjQxMDgyMiwiZXhwIjoxNjUyNDE0NDIyfQ.XqQkOCZYZb-e5WqIBLOMMVVE8ijWtiHHmVUjSJi95Ks"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "entity": {
+            "type": "Service",
+            "id": "baabb0e0-7b52-48c9-9061-aa784078e142",
+            "name": "Open Weather API"
+          },
+          "children": [
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+                  "name": "GET"
+                },
+                "body": {
+                  "formBody": {
+                    "overrideContentType": true,
+                    "encoding": "application/x-www-form-urlencoded",
+                    "items": []
+                  },
+                  "bodyType": "Text"
+                },
+                "uri": {
+                  "query": {
+                    "delimiter": "&",
+                    "items": [
+                      {
+                        "enabled": true,
+                        "name": "q",
+                        "value": "Fortaleza,Ceara,BR"
+                      },
+                      {
+                        "enabled": true,
+                        "name": "limit",
+                        "value": "10"
+                      },
+                      {
+                        "enabled": true,
+                        "name": "appid",
+                        "value": "922efd15ff56ad066584da88f2dacf5b"
+                      }
+                    ]
+                  },
+                  "scheme": {
+                    "name": "http",
+                    "version": "V11"
+                  },
+                  "host": "api.openweathermap.org",
+                  "path": "/geo/1.0/direct"
+                },
+                "id": "56e4fcb4-17d6-48f5-b635-528b0025b195",
+                "name": "CoordinatesByLocationName",
+                "headers": []
+              }
+            },
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+                  "name": "GET"
+                },
+                "body": {
+                  "formBody": {
+                    "overrideContentType": true,
+                    "encoding": "application/x-www-form-urlencoded",
+                    "items": []
+                  },
+                  "bodyType": "Text"
+                },
+                "uri": {
+                  "query": {
+                    "delimiter": "&",
+                    "items": [
+                      {
+                        "enabled": true,
+                        "name": "lat",
+                        "value": "-3.7304512"
+                      },
+                      {
+                        "enabled": true,
+                        "name": "lon",
+                        "value": "-38.5217989"
+                      },
+                      {
+                        "enabled": true,
+                        "name": "units",
+                        "value": "metric"
+                      },
+                      {
+                        "enabled": true,
+                        "name": "appid",
+                        "value": "922efd15ff56ad066584da88f2dacf5b"
+                      }
+                    ]
+                  },
+                  "scheme": {
+                    "secure": true,
+                    "name": "https",
+                    "version": "V11"
+                  },
+                  "host": "api.openweathermap.org",
+                  "path": "/data/2.5/weather"
+                },
+                "id": "696c1a0f-d7bc-45f7-bc8e-658a16d3738c",
+                "name": "CurrentWeatherData",
+                "headers": []
+              }
+            }
+          ]
+        },
+        {
+          "entity": {
+            "type": "Service",
+            "id": "b6fd4984-7a94-4f2e-acbe-ee038692adb7",
+            "name": "Report"
+          },
+          "children": [
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+                  "name": "GET"
+                },
+                "body": {
+                  "formBody": {
+                    "overrideContentType": true,
+                    "encoding": "application/x-www-form-urlencoded",
+                    "items": []
+                  },
+                  "bodyType": "Text"
+                },
+                "uri": {
+                  "query": {
+                    "delimiter": "&",
+                    "items": []
+                  },
+                  "scheme": {
+                    "name": "http",
+                    "version": "V11"
+                  },
+                  "host": "localhost:3000",
+                  "path": "/report/reportbycity/italoa.feitosa@gmail.com/Parnaíba"
+                },
+                "id": "e3c5e467-0f16-42fa-b932-8202730c437c",
+                "name": "reportByCity",
+                "headers": [
+                  {
+                    "enabled": true,
+                    "name": "x-access-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Iml0YWxvYS5mZWl0b3NhQGdtYWlsLmNvbSIsInN1YiI6IjYyN2FmMTJhMDk3ZGU3MTBmODMxODkxYSIsImlhdCI6MTY1MjQ0ODM3MywiZXhwIjoxNjUyNDUxOTczfQ.H5_ECrNNUrEZkQGDeMNf_oxROlMaLioaFQG_butxIFk"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "entity": {
+            "type": "Service",
+            "id": "104b87c5-d589-4ec0-af01-c482443f5e29",
+            "name": "Wheather"
+          },
+          "children": [
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+                  "name": "GET"
+                },
+                "body": {
+                  "formBody": {
+                    "overrideContentType": true,
+                    "encoding": "application/x-www-form-urlencoded",
+                    "items": []
+                  },
+                  "bodyType": "Text"
+                },
+                "uri": {
+                  "query": {
+                    "delimiter": "&",
+                    "items": []
+                  },
+                  "scheme": {
+                    "name": "http",
+                    "version": "V11"
+                  },
+                  "host": "localhost:3000",
+                  "path": "/weather/city/currenttemp/-2.9147515/-41.7661953"
+                },
+                "id": "a3d61155-60a4-468a-bf0d-f46bdbbe2a07",
+                "name": "getCurrentTempWeatherCity",
+                "headers": [
+                  {
+                    "enabled": true,
+                    "name": "x-access-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjp7ImVtYWlsIjoiaXRhbG9hLmZlaXRvc2FAZ21haWwuY29tIiwic3ViIjoiNjI3OWE2NTc2NjU0YmMxODVjMDFlM2JmIn0sImlhdCI6MTY1MjE0MTE5N30.pSbXH-aF1KLS5jHH4O5wJtLLWa88eXQVpkiqALKS730"
+                  }
+                ]
+              }
+            },
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+                  "name": "GET"
+                },
+                "body": {
+                  "formBody": {
+                    "overrideContentType": true,
+                    "encoding": "application/x-www-form-urlencoded",
+                    "items": []
+                  },
+                  "bodyType": "Text"
+                },
+                "uri": {
+                  "query": {
+                    "delimiter": "&",
+                    "items": []
+                  },
+                  "scheme": {
+                    "name": "http",
+                    "version": "V11"
+                  },
+                  "host": "localhost:3000",
+                  "path": "/weather/cities/Salvador/10"
+                },
+                "id": "9649d805-b88f-4573-b474-38fab7820490",
+                "name": "getListCities",
+                "headers": [
+                  {
+                    "name": "Authorization",
+                    "value": "Basic YWRtaW46YWRtaW4="
+                  },
+                  {
+                    "enabled": true,
+                    "name": "x-access-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjp7ImVtYWlsIjoiaXRhbG9hLmZlaXRvc2FAZ21haWwuY29tIiwic3ViIjoiNjI3OWE2NTc2NjU0YmMxODVjMDFlM2JmIn0sImlhdCI6MTY1MjE0MTE5N30.pSbXH-aF1KLS5jHH4O5wJtLLWa88eXQVpkiqALKS730"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

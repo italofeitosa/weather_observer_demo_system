@@ -1,0 +1,5 @@
+{
+  "delete": "ok",
+  "message": "The observed city has been deleted.",
+  "message_report": "Delete Report: ok - The report associated with the city has been deleted"
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "id": "627c7d1c931ed649acced9fe",
+    "name": "Sobral",
+    "latitude": "-3.6879135",
+    "longitude": "-40.3456372",
+    "country": "BR",
+    "state": "Ceará",
+    "email": "italoa.feitosa@gmail.com",
+    "current_temp": "23.54",
+    "variation_temp": "2.0",
+    "createdAt": "2022-05-12T03:21:00.613Z"
+  },
+  {
+    "id": "627c7d78931ed649acced9ff",
+    "name": "Parnaíba",
+    "latitude": "-2.9147515",
+    "longitude": "-41.7661953",
+    "country": "BR",
+    "state": "Piauí",
+    "email": "italoa.feitosa@gmail.com",
+    "current_temp": "25.15",
+    "variation_temp": "3.0",
+    "createdAt": "2022-05-12T03:22:32.423Z"
+  },
+  {
+    "id": "627dc9d0fccd114424f0f3d8",
+    "name": "Salvador",
+    "latitude": "-12.9822499",
+    "longitude": "-38.4812772",
+    "country": "BR",
+    "state": "Bahia",
+    "email": "italoa.feitosa@gmail.com",
+    "current_temp": "27.85",
+    "variation_temp": "1.0",
+    "createdAt": "2022-05-13T03:00:32.846Z"
+  }
+]
