@@ -1,3 +1,4 @@
+import { ObjectIdColumn } from "typeorm";
 import DBConnector from "../../../db_connector";
 
 const ReportService = {
@@ -22,7 +23,6 @@ const ReportService = {
         .catch((error) => Promise.reject(error));
 
       return reportCreated;
-      
     } catch (error) {
       console.log(error);
       return error.writeErrors[0];
@@ -32,29 +32,62 @@ const ReportService = {
   findReport: async (report) => {
     try {
       const reportRepository = await DBConnector.getReportRepository();
-      const reportListCities = await reportRepository.find({
-        email: report.email,
-        name: report.name
-      }).then((listCity) => {
-        return listCity;        
+      const reportListCities = await reportRepository
+        .find({
+          email: report.email,
+          name: report.name,
+        })
+        .then((listCity) => {
+          return listCity;
+        })
+        .catch((error) => Promise.reject(error));
 
-      }).catch((error) => Promise.reject(error));
-
-      reportListCities.forEach(item => {
-          delete item.id;
-          delete item.id_city;
-          delete item.email;
-          delete item.createdAt;          
+      reportListCities.forEach((item) => {
+        delete item.id;
+        delete item.id_city;
+        delete item.email;
+        delete item.createdAt;
       });
 
       return reportListCities;
-      
     } catch (error) {
       console.log(error);
       return error.writeErrors[0];
     }
-  }
+  },
 
+  deleteById: async (id) => {
+    try {
+      console.log("deleteById...");
+      const reportRepository = await DBConnector.getReportRepository();
+      let deleteMessage = {delete: "ok", message: "The report associated with the city has been deleted"};
+
+      const report = await reportRepository.findOne({
+        id_city: ObjectIdColumn(id)
+      }).then((report) => {
+        return report;
+      })
+      .catch((error) => Promise.reject(error));
+
+      if(!report) throw {delete: "not found", message: "There is no Report associated with the city not found!!"}
+
+      console.log("find Report: " + report);
+      const reportDeleted = await reportRepository
+        .delete({city_name: ObjectIdColumn(report.city_name)})
+        .then((reportDeleted) => {
+          return reportDeleted;
+        })
+        .catch((error) => Promise.reject(error));
+
+      if (reportDeleted.affected == 0) throw {delete: "not found", message: "There is no Report associated with the city to delete!"}
+      
+      return deleteMessage;
+      
+    } catch (error) {
+      console.log(error);
+      return error;
+    }
+  },
 };
 
 export default ReportService;

@@ -1,4 +1,5 @@
 import DBConnector from "../../../db_connector";
+import ReportService from "../../report/service";
 
 const CityService = {
   createCity: async (city) => {
@@ -99,16 +100,20 @@ const CityService = {
         .then((cityDeleted) => {
           return cityDeleted;
         })
-        .catch((error) => Promise.reject(error));
+        .catch((error) => Promise.reject(error));        
 
-      if (cityDeleted.affected == 0)
+      if (cityDeleted.affected == 0) {
         throw {
           writeErrors: [
             { errmsg: { affected: "There is no city to delete!" } },
           ],
         };
+      }
 
-      //TODO Check if delete Entity Report by id City
+      const reportDeleted = await ReportService.deleteById(id);
+      const messageReport = "Delete Report: " + reportDeleted.delete + " - " + reportDeleted.message;
+      console.log(messageReport);
+      cityDeleted.messageReport = messageReport;
 
       return cityDeleted;
 

@@ -55,15 +55,13 @@ export default class CityController {
   static deleteCity = async (req, res) => {
     try {
       const { id } =  req.params;
-      const validation = CityValidation.validataitonDeleteCityParams({id});
-      console.log(validation);
+      const validation = CityValidation.validataitonDeleteCityParams({id});      
       if (validation) throw validation;
       
-      const cityDeleted = await CityService.deleteById(id);
-      console.log(cityDeleted);
-      if (cityDeleted.errmsg) throw cityDeleted;      
+      const cityDeleted = await CityService.deleteById(id);      
+      if (cityDeleted.errmsg) throw cityDeleted;
 
-      return res.status(parseInt(HTTP_STATUS_OK)).json({delete: "ok", message: "The observed city has been deleted."});
+      return res.status(parseInt(HTTP_STATUS_OK)).json({delete: "ok", message: "The observed city has been deleted.", message_report: cityDeleted.messageReport});
 
     } catch (error) {
       console.log(error);
