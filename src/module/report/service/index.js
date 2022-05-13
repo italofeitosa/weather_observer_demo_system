@@ -35,7 +35,7 @@ const ReportService = {
       const reportListCities = await reportRepository
         .find({
           email: report.email,
-          name: report.name,
+          city_name: report.city,
         })
         .then((listCity) => {
           return listCity;
@@ -82,7 +82,7 @@ const ReportService = {
       if (reportDeleted.affected == 0) throw {delete: "not found", message: "There is no Report associated with the city to delete!"}
       
       return deleteMessage;
-      
+
     } catch (error) {
       console.log(error);
       return error;
