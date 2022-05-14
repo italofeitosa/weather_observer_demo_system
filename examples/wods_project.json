@@ -74,7 +74,7 @@
                     "items": []
                   },
                   "bodyType": "Text",
-                  "textBody": "{\n\n    \"email\": \"italoa.feitosa@gmail.com\",\n    \"name\": \"Italo\",\n    \"lastName\": \"Feitosa\",\n    \"password\": \"teste@123456\"\n  \n}\n"
+                  "textBody": "{\n\n    \"email\": \"itinhofeitosa@gmail.com\",\n    \"name\": \"Italo\",\n    \"lastName\": \"Feitosa\",\n    \"password\": \"teste@123456\"\n  \n}\n"
                 },
                 "uri": {
                   "query": {
@@ -86,10 +86,10 @@
                     "version": "V11"
                   },
                   "host": "localhost:3000",
-                  "path": "/user/singup"
+                  "path": "/user/signup"
                 },
                 "id": "d0eab4b7-5c89-4026-bd58-5c0c37889419",
-                "name": "User Sing Up",
+                "name": "User Sign Up",
                 "headers": [
                   {
                     "enabled": true,
@@ -163,7 +163,7 @@
                     "items": []
                   },
                   "bodyType": "Text",
-                  "textBody": "{\n  \"name\": \"Salvador\",\n  \"latitude\": \"-12.9822499\",\n  \"longitude\": \"-38.4812772\",\n  \"country\": \"BR\",\n  \"state\": \"Bahia\",\n  \"email\": \"italoa.feitosa@gmail.com\",\n  \"variation_temp\": \"1.0\"\n}\n"
+                  "textBody": "{\n  \"name\": \"Fortaleza\",\n  \"latitude\": \"-3.7304512\",\n  \"longitude\": \"-38.5217989\",\n  \"country\": \"BR\",\n  \"state\": \"Ceará\",\n  \"email\": \"italoa.feitosa@gmail.com\",\n  \"variation_temp\": \"1.00\"\n}\n"
                 },
                 "uri": {
                   "query": {
@@ -183,7 +183,7 @@
                   {
                     "enabled": true,
                     "name": "x-access-token",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Iml0YWxvYS5mZWl0b3NhQGdtYWlsLmNvbSIsInN1YiI6IjYyN2FmMTJhMDk3ZGU3MTBmODMxODkxYSIsImlhdCI6MTY1MjQxMDgyMiwiZXhwIjoxNjUyNDE0NDIyfQ.XqQkOCZYZb-e5WqIBLOMMVVE8ijWtiHHmVUjSJi95Ks"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Iml0YWxvYS5mZWl0b3NhQGdtYWlsLmNvbSIsInN1YiI6IjYyN2FmMTJhMDk3ZGU3MTBmODMxODkxYSIsImlhdCI6MTY1MjQ5MDQzNywiZXhwIjoxNjUyNDk0MDM3fQ.lqipXzFezI5IbWvU1juc8LWP5s5IPILLC_eqtaYRuMM"
                   },
                   {
                     "enabled": true,
@@ -218,7 +218,7 @@
                     "version": "V11"
                   },
                   "host": "localhost:3000",
-                  "path": "/city/627dc63ec850e646e456e4ce"
+                  "path": "/city/627c7d78931ed649acced9ff"
                 },
                 "id": "6fc50256-cf2d-40aa-907d-8a3b7c98ce5a",
                 "name": "deleteCity",
@@ -226,7 +226,7 @@
                   {
                     "enabled": true,
                     "name": "x-access-token",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Iml0YWxvYS5mZWl0b3NhQGdtYWlsLmNvbSIsInN1YiI6IjYyN2FmMTJhMDk3ZGU3MTBmODMxODkxYSIsImlhdCI6MTY1MjQwNzAzNywiZXhwIjoxNjUyNDEwNjM3fQ.pOpuPyb_qblyBLnOTmjuaz6CB3pYYrRhGIaYRModA6A"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Iml0YWxvYS5mZWl0b3NhQGdtYWlsLmNvbSIsInN1YiI6IjYyN2FmMTJhMDk3ZGU3MTBmODMxODkxYSIsImlhdCI6MTY1MjQ5MDQzNywiZXhwIjoxNjUyNDk0MDM3fQ.lqipXzFezI5IbWvU1juc8LWP5s5IPILLC_eqtaYRuMM"
                   }
                 ]
               }
@@ -264,7 +264,7 @@
                   {
                     "enabled": true,
                     "name": "x-access-token",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Iml0YWxvYS5mZWl0b3NhQGdtYWlsLmNvbSIsInN1YiI6IjYyN2FmMTJhMDk3ZGU3MTBmODMxODkxYSIsImlhdCI6MTY1MjQxMDgyMiwiZXhwIjoxNjUyNDE0NDIyfQ.XqQkOCZYZb-e5WqIBLOMMVVE8ijWtiHHmVUjSJi95Ks"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Iml0YWxvYS5mZWl0b3NhQGdtYWlsLmNvbSIsInN1YiI6IjYyN2FmMTJhMDk3ZGU3MTBmODMxODkxYSIsImlhdCI6MTY1MjQ4MjE1MiwiZXhwIjoxNjUyNDg1NzUyfQ.j3Alu7rBIOBcdFVGnVl4ktwf4_sTw9yGmbqFSgUxTBM"
                   }
                 ]
               }
@@ -414,7 +414,7 @@
                     "version": "V11"
                   },
                   "host": "localhost:3000",
-                  "path": "/report/reportbycity/italoa.feitosa@gmail.com/Parnaíba"
+                  "path": "/report/reportbycity/italoa.feitosa@gmail.com/Salvador"
                 },
                 "id": "e3c5e467-0f16-42fa-b932-8202730c437c",
                 "name": "reportByCity",
@@ -422,7 +422,7 @@
                   {
                     "enabled": true,
                     "name": "x-access-token",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Iml0YWxvYS5mZWl0b3NhQGdtYWlsLmNvbSIsInN1YiI6IjYyN2FmMTJhMDk3ZGU3MTBmODMxODkxYSIsImlhdCI6MTY1MjQ0ODM3MywiZXhwIjoxNjUyNDUxOTczfQ.H5_ECrNNUrEZkQGDeMNf_oxROlMaLioaFQG_butxIFk"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Iml0YWxvYS5mZWl0b3NhQGdtYWlsLmNvbSIsInN1YiI6IjYyN2FmMTJhMDk3ZGU3MTBmODMxODkxYSIsImlhdCI6MTY1MjQ5MjQ0NiwiZXhwIjoxNjUyNDk2MDQ2fQ.1HMCF-9XgaugAHYTipRVw6S32ARrFQBY4Yuir9jtskI"
                   }
                 ]
               }
@@ -499,19 +499,15 @@
                     "version": "V11"
                   },
                   "host": "localhost:3000",
-                  "path": "/weather/cities/Salvador/10"
+                  "path": "/weather/cities/Fortaleza/10"
                 },
                 "id": "9649d805-b88f-4573-b474-38fab7820490",
                 "name": "getListCities",
                 "headers": [
                   {
-                    "name": "Authorization",
-                    "value": "Basic YWRtaW46YWRtaW4="
-                  },
-                  {
                     "enabled": true,
                     "name": "x-access-token",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjp7ImVtYWlsIjoiaXRhbG9hLmZlaXRvc2FAZ21haWwuY29tIiwic3ViIjoiNjI3OWE2NTc2NjU0YmMxODVjMDFlM2JmIn0sImlhdCI6MTY1MjE0MTE5N30.pSbXH-aF1KLS5jHH4O5wJtLLWa88eXQVpkiqALKS730"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Iml0YWxvYS5mZWl0b3NhQGdtYWlsLmNvbSIsInN1YiI6IjYyN2FmMTJhMDk3ZGU3MTBmODMxODkxYSIsImlhdCI6MTY1MjQ5MDQzNywiZXhwIjoxNjUyNDk0MDM3fQ.lqipXzFezI5IbWvU1juc8LWP5s5IPILLC_eqtaYRuMM"
                   }
                 ]
               }
