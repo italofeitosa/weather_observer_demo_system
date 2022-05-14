@@ -5,11 +5,11 @@ import config from "../../../config";
 const { HTTP_STATUS_OK } = config;
 
 export default class UserController {
-  static singUp = async (req, res) => {
+  static signUp = async (req, res) => {
     try {
         const {email, name, lastName, password} = req.body;
         
-        const validation = UserValidator.validationSingUpParams({email, name, lastName, password});
+        const validation = UserValidator.validationSignUppParams({email, name, lastName, password});
         if(validation)  throw validation;
 
         const userCreate = await UserService.createUser({email, name, lastName, password});
@@ -23,6 +23,7 @@ export default class UserController {
         
     } catch (error) {
         console.log(error);
+        delete error.op;
         return res.status(parseInt(400)).json(error);
     }
   };

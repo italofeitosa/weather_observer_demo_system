@@ -1,7 +1,7 @@
 import validator from 'validator';
 
 const UserValidator = {
-    validationSingUpParams: (user)=>{
+    validationSignUppParams: (user)=>{
         try {
             delete user.lastName;
             const listOfErros = [];

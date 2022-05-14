@@ -1,7 +1,7 @@
 import UserController from "./controller";
 
 const UserRouter = (app) => {
-    app.post('/user/singup', UserController.singUp);
+    app.post('/user/signup', UserController.signUp);
 };
 
 export default UserRouter;
