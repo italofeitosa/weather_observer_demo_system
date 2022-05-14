@@ -23,7 +23,6 @@ export default class UserController {
         
     } catch (error) {
         console.log(error);
-        delete error.op;
         return res.status(parseInt(400)).json(error);
     }
   };
