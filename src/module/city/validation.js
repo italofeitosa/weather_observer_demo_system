@@ -8,6 +8,9 @@ const CityValidation = {
             const listOfErros = CityValidation.checkParamsRequired(city);
             
             if(listOfErros.length != 0) throw {'error': listOfErros};
+
+            const checkDecimal = CityValidation.checkDecimalPlace(city.variation_temp);
+            if(checkDecimal) throw checkDecimal;
             
             const cityRepository = await DBConnector.getCityRepository();
             const cityFind = await cityRepository.find({
@@ -65,6 +68,21 @@ const CityValidation = {
             
         } catch (error) {
             console.log("Error: " +  error);
+            return error;
+        }
+    },
+
+    checkDecimalPlace: (number) => {
+        try {
+            const errorJson = {field: "variation_temp", "errorMessage": "The errorMessage field can have up to two decimal places. For example 1.00"}
+            const decimal = number.split(".")[1];
+            
+            if(!decimal) throw errorJson;
+
+            if(decimal.length > 2) throw errorJson;
+            
+        } catch (error) {
+            console.log("checkDecimalPlace: " + error);
             return error;
         }
     }
